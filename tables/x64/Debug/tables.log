@@ -1,0 +1,22 @@
+﻿  main.cpp
+  list.cpp
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\list.cpp(141,7): warning C4267: аргумент: преобразование из "size_t" в "const int"; возможна потеря данных
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\list.cpp(145,7): warning C4267: аргумент: преобразование из "size_t" в "const int"; возможна потеря данных
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\list.cpp(147,7): warning C4267: аргумент: преобразование из "size_t" в "const int"; возможна потеря данных
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\list.cpp(152,8): warning C4267: аргумент: преобразование из "size_t" в "const int"; возможна потеря данных
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\list.cpp(154,8): warning C4267: аргумент: преобразование из "size_t" в "const int"; возможна потеря данных
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\list.cpp(156,8): warning C4267: аргумент: преобразование из "size_t" в "const int"; возможна потеря данных
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\list.cpp(170,7): warning C4267: аргумент: преобразование из "size_t" в "const int"; возможна потеря данных
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\list.cpp(172,7): warning C4267: аргумент: преобразование из "size_t" в "const int"; возможна потеря данных
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\list.cpp(174,7): warning C4267: аргумент: преобразование из "size_t" в "const int"; возможна потеря данных
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\list.cpp(179,8): warning C4267: аргумент: преобразование из "size_t" в "const int"; возможна потеря данных
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\list.cpp(181,8): warning C4267: аргумент: преобразование из "size_t" в "const int"; возможна потеря данных
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\list.cpp(183,8): warning C4267: аргумент: преобразование из "size_t" в "const int"; возможна потеря данных
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\list.cpp(200,7): warning C4267: аргумент: преобразование из "size_t" в "const int"; возможна потеря данных
+  Создание кода...
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\list.cpp(162): warning C4715: Polinoms::operator<: значение возвращается не при всех путях выполнения
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\list.cpp(189): warning C4715: Polinoms::operator>: значение возвращается не при всех путях выполнения
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\list\list.h(134): warning C4715: List<Monom>::operator[]: значение возвращается не при всех путях выполнения
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\main.cpp(13): warning C4715: GetNumber: значение возвращается не при всех путях выполнения
+C:\Users\$A$A\source\repos\mp2-lab5-tables\tables\tables\UOTable.h(55): warning C4715: UOTable<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::find: значение возвращается не при всех путях выполнения
+  tables.vcxproj -> C:\Users\$A$A\source\repos\mp2-lab5-tables\x64\Debug\tables.exe
