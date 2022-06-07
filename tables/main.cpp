@@ -51,9 +51,9 @@ int main() {
 	//cout << polinoms[hash.hashFunction(polinoms[0].GetKey())];
 
 	*/
-	ptr:
+ptr:
 	if (itter == 0)
-		cout << "No polinoms in memory...\nEnter action:" << endl;
+		cout << "No polinoms in memory...\nPlease, add polinoms...:" << endl;
 	else {
 		cout << "\nIn memory:\n";
 		for (int i = 0; i < itter; i++) {
@@ -62,14 +62,18 @@ int main() {
 		}
 	}
 	
-	cout << "\n1. Add polinom\n2. Delete polinom\n3. Add two polynoms\n4. Subctruct two polynoms\n5. Multiply two polynoms\n6. Multiply by a scalar\n7. Exit\n... ";
+	cout << "\n1. Add polinom\n2. Add two polynoms\n3. Subctruct two polynoms\n4. Multiply two polynoms\n5. Multiply by a scalar\n6. Exit\n... ";
 
 	
-    while (choice > 8 || choice < 1) {
-        cin >> choice;
-        if (choice > 8 || choice < 1)
-            cout << "Wrong choice!\n";
-    }
+	while (choice > 7 || choice < 1 || itter == 0) {
+		cin >> choice;
+		if (choice > 7 || choice < 1 || itter == 0) {
+			if (choice == 1)
+				break;
+			cout << "Wrong choice, or no polinoms in memory!\n";
+		}
+		
+	}
 
 	
 	switch (choice) {
@@ -95,12 +99,8 @@ int main() {
 		a = 1;
 		goto ptr;
 	}
-	case 2: {
-		table.printKeys();
-		cout << endl;
-	}
 		  break;
-	case 3: {
+	case 2: {
 		cout << "Polynoms addition.\nEnter, what polynoms you want to add:\nName of first polynom: ";
 		cin >> NameOfFirstPolynom;
 		cout << "\nName of second polynom: ";
@@ -127,7 +127,7 @@ int main() {
 
 	}
 		  break;
-	case 4: {
+	case 3: {
 		cout << "Polynoms substruct.\nEnter, what polynoms you want to subrtract:\nName of first polynom: ";
 		cin >> NameOfFirstPolynom;
 		cout << "\nName of second polynom: ";
@@ -135,6 +135,7 @@ int main() {
 		cout << "\nSubstruct is:\n";
 		cout << polinoms[GetNumber(NameOfFirstPolynom, polinoms, tree2, itter)] - polinoms[GetNumber(NameOfSecondPolynom, polinoms, tree2, itter)] << " on tree\n";
 		cout << polinoms[table.find(NameOfFirstPolynom)] - polinoms[table.find(NameOfSecondPolynom)] << " on table";
+		cout << (hash.GetHash(NameOfFirstPolynom) - hash.GetHash(NameOfSecondPolynom)) << " on hash table\n";
 		cout << "\nSave result?\n1 - yes\n2 - no\n";
 		cin >> b;
 		if (b == 1) {
@@ -144,6 +145,7 @@ int main() {
 			polinoms[itter].setKey();
 			table.insert(polinoms[itter].GetKey());
 			tree2.insert(polinoms[itter].GetKey());
+			hash.insertItem(polinoms[itter].GetKey(), polinoms[itter]);
 			itter++;
 		}
 		choice = 0;
@@ -151,7 +153,7 @@ int main() {
 
 	}
 		  break;
-	case 5: {
+	case 4: {
 		cout << "Polynoms multiply.\nEnter, what polynoms you want to multiply:\nName of first polynom: ";
 		cin >> NameOfFirstPolynom;
 		cout << "\nName of second polynom: ";
@@ -159,6 +161,7 @@ int main() {
 		cout << "\nMyltiply is:\n";
 		cout << polinoms[GetNumber(NameOfFirstPolynom, polinoms, tree2, itter)] * polinoms[GetNumber(NameOfSecondPolynom, polinoms, tree2, itter)] << " on tree\n";
 		cout << polinoms[table.find(NameOfFirstPolynom)] * polinoms[table.find(NameOfSecondPolynom)] << " on table";
+		cout << (hash.GetHash(NameOfFirstPolynom) * hash.GetHash(NameOfSecondPolynom)) << " on hash table\n";
 		cout << "\nSave result?\n1 - yes\n2 - no\n";
 		cin >> b;
 		if (b == 1) {
@@ -168,6 +171,7 @@ int main() {
 			polinoms[itter].setKey();
 			table.insert(polinoms[itter].GetKey());
 			tree2.insert(polinoms[itter].GetKey());
+			hash.insertItem(polinoms[itter].GetKey(), polinoms[itter]);
 			itter++;
 		}
 		choice = 0;
@@ -175,7 +179,7 @@ int main() {
 
 	}
 		  break;
-	case 6: {
+	case 5: {
 		double scalar;
 		cout << "Multiply by a scalar\nEnter scalar:\n";
 		cin >> scalar;
@@ -184,6 +188,7 @@ int main() {
 		cout << "\nMyltiply is:\n";
 		cout << polinoms[GetNumber(NameOfFirstPolynom, polinoms, tree2, itter)] * scalar << " on tree\n";
 		cout << polinoms[table.find(NameOfFirstPolynom)] * scalar << " on table";
+		cout << (hash.GetHash(NameOfFirstPolynom) * scalar) << " on hash table\n";
 		cout << "\nSave result?\n1 - yes\n2 - no\n";
 		cin >> b;
 		if (b == 1) {
@@ -193,13 +198,14 @@ int main() {
 			polinoms[itter].setKey();
 			table.insert(polinoms[itter].GetKey());
 			tree2.insert(polinoms[itter].GetKey());
+			hash.insertItem(polinoms[itter].GetKey(), polinoms[itter]);
 			itter++;
 		}
 		choice = 0;
 		goto ptr;
 	}
 		  break;
-	case 7: {
+	case 6: {
 		return 0;
 	}
 	}
